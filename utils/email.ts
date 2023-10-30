@@ -34,7 +34,7 @@ export const sendAccountMail = async (user: any) => {
 
     const passedData = {
       userName: user.name,
-      url: `http://localhost:1148/api/${token}/verify-account`,
+      url: `http://localhost:5173/${token}/verify-account`,
     };
 
     const readData = path.join(__dirname, "../views/verifyAccount.ejs");
@@ -74,7 +74,7 @@ export const resetAccountPassword = async (user: any,) => {
 
     const passedData = {
       userName: user.name,
-      url: `http://localhost:1148/api/${token}/reset-password`,
+      url: `http://localhost:5173/${token}/reset-password`,
     };
 
     const readData = path.join(__dirname, "../views/resetPassword.ejs");
@@ -118,7 +118,7 @@ export const sendFirstAccountMail = async (user: any) => {
 
     const passedData = {
       userName: user.name,
-      url: `http://localhost:1148/api/${token}/first-verify`,
+      url: `http://localhost:5173/${token}/first-verify`,
       code: user?.secretKey
     };
 

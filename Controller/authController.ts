@@ -227,7 +227,7 @@ export const verifyAccount = async (req: Request, res: Response) => {
       message: "verification successful",
       data: user,
     });
-  } catch (error) {
+  } catch (error:any) {
     return res.status(404).json({
       message: "error",
       data: error.message,
@@ -267,14 +267,14 @@ export const firstVerified = async (req: Request, res: Response) => {
           message: "success",
           data: user,
         });
-      } catch (emailError) {
+      } catch (emailError:any) {
         return res.status(500).json({
           message: "Error sending verification email",
           data: emailError.message,
         });
       }
     });
-  } catch (error) {
+  } catch (error:any) {
     return res.status(500).json({
       message: "Internal server error",
       data: error.message,
