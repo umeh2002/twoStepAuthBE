@@ -35,4 +35,5 @@ router
   .patch(validatorHandler(resetPasswordValidator), resetPasword);
 router.route("/:token/first-verify").get(firstVerified);
 router.route("/:token/verify-account").get(verifyAccount);
+router.route("/:token/verify-account").get(verifyAccount);
 export default router;
