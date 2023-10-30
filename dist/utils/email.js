@@ -42,7 +42,7 @@ const sendAccountMail = (user) => __awaiter(void 0, void 0, void 0, function* ()
         const token = jsonwebtoken_1.default.sign({ id: user._id }, "secret");
         const passedData = {
             userName: user.name,
-            url: `http://localhost:5173/${token}/verify-account`,
+            url: `https://two-auth-challenge.web.app/${token}/verify-account`,
         };
         const readData = path_1.default.join(__dirname, "../views/verifyAccount.ejs");
         const data = yield ejs_1.default.renderFile(readData, passedData);
@@ -77,7 +77,7 @@ const resetAccountPassword = (user) => __awaiter(void 0, void 0, void 0, functio
         const token = jsonwebtoken_1.default.sign({ id: user._id }, "secret");
         const passedData = {
             userName: user.name,
-            url: `http://localhost:5173/${token}/reset-password`,
+            url: `https://two-auth-challenge.web.app/${token}/reset-password`,
         };
         const readData = path_1.default.join(__dirname, "../views/resetPassword.ejs");
         const data = yield ejs_1.default.renderFile(readData, passedData);
@@ -115,7 +115,7 @@ const sendFirstAccountMail = (user) => __awaiter(void 0, void 0, void 0, functio
         }
         const passedData = {
             userName: user.name,
-            url: `http://localhost:5173/${token}/first-verify`,
+            url: `https://two-auth-challenge.web.app/${token}/first-verify`,
             code: user === null || user === void 0 ? void 0 : user.secretKey
         };
         const readData = path_1.default.join(__dirname, "../views/firstVerification.ejs");
